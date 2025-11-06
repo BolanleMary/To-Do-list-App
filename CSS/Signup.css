@@ -30,6 +30,11 @@
     color: white;
 }
 
+.imgIcon{
+height: 20px;
+width: 20px;
+}
+
 /* .intro h1{
     font-size: large;
 } */
@@ -54,6 +59,7 @@ input{
     margin-right: 25px;
     background-color: rgb(229, 235, 235);
 border-radius: 6px;
+
 }
 
 .btn{
