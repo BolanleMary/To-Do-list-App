@@ -18,21 +18,16 @@
   height: 500px;
   background-color: white;
 }
-.innerBox{
-    display: flex;
-    gap: 80px;
+.innerBox {
+  display: flex;
+  gap: 80px;
 }
 
-.intro{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: white;
-}
-
-.imgIcon{
-height: 20px;
-width: 20px;
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
 }
 
 /* .intro h1{
@@ -51,34 +46,57 @@ form {
   flex-direction: column;
 }
 
-input{
-    height: 50px;
-    padding: 20px;
-    margin-top: 20px;
-    margin-left: 25px;
-    margin-right: 25px;
-    background-color: rgb(229, 235, 235);
-border-radius: 6px;
-
+label {
+  margin-top: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
+  position: relative;
 }
 
-.btn{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 70px;
-   margin-left: 25px;
-    margin-right: 25px;
-
+.imgIcon {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 15px;
+  left: 8px;
 }
 
-button{
-    padding: 15px 50px;
-    border-radius: 20px;
-    font-size: 16px;;
+input {
+  height: 50px;
+  padding-left: 35px;
+  width: 300px;
+  background-color: rgb(229, 235, 235);
+  border-radius: 6px;
+  border: 1px solid purple;
 }
 
-.signUpBtn{
-    background-color: blueviolet;
-    color: white;
+#buttonEye{
+  border: none;
+  background-color: transparent;
+}
+.eyeImg {
+  position: absolute;
+  right: 9px;
+  top: 9px;
+ 
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+button {
+  padding: 15px 50px;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.signUpBtn {
+  background-color: blueviolet;
+  color: white;
 }

@@ -5,44 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To do List</title>
     <link rel="stylesheet" href="../CSS/Signup.css" />
+    <script src="../Js/Signup.js" defer></script>
   </head>
   <body>
     <div class="container">
-      <div class ="innerBox">
+      <div class="innerBox">
         <div class="intro">
           <h1>Welcome to your To-do list App</h1>
           <p>Sign up to get started</p>
         </div>
-      <main class="wrapper">
-        
-        <h2>Sign up</h2>
-        <form>
-          <img src="../assets/userIcon.svg" class ="imgIcon"/>
-          <input type="text" name="name" placeholder="Enter Name" required />
-          <img src="../assets/emailIcon.svg" class ="imgIcon"/>
-          <input type="email" name="email" placeholder="Enter Email" required />
-          <input
-            type="password"
-            name="password"
-            placeholder="Enter password"
-            required
-          />
-          <!-- <label>
+        <main class="wrapper">
+          <h2>Sign up</h2>
+          <form>
+            <label>
+              <img src="../assets/userIcon.svg" class="imgIcon" />
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter Name"
+                required
+              />
+            </label>
+
+            <label>
+              <img src="../assets/emailIcon.svg" class="imgIcon" />
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Email"
+                required
+              />
+            </label>
+
+            <label>
+              <input
+                id="password"
+                type="password"
+                name="password"
+                placeholder="Enter password"
+                required
+              />
+              <button type="button" class="eyeImg" id="buttonEye">
+                <img src="../assets/eye.svg" class="eyeImg" id="eyeImg" />
+              </button>
+            </label>
+            <!-- <label>
             
             <input type="checkbox"/>
           </label> -->
 
-      <div class="btn">
-        <button class="signUpBtn">
-signup
-        </button>
-        <button class="signInBtn">
-signin 
-        </button>
-      </div>
-        </form>
-        
-      </main>
+            <div class="btn">
+              <button class="signUpBtn">signup</button>
+              <button class="signInBtn">signin</button>
+            </div>
+          </form>
+        </main>
       </div>
     </div>
   </body>
