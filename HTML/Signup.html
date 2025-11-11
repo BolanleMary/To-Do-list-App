@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To do List</title>
     <link rel="stylesheet" href="../CSS/Signup.css" />
-    <script src="../Js/Signup.js" defer></script>
+    
   </head>
   <body>
     <div class="container">
@@ -15,11 +15,12 @@
           <p>Sign up to get started</p>
         </div>
         <main class="wrapper">
-          <h2>Sign up</h2>
-          <form>
+          <h2 class="underline">Sign up</h2>
+          <form id="form">
             <label>
               <img src="../assets/userIcon.svg" class="imgIcon" />
               <input
+              id="name"
                 type="text"
                 name="name"
                 placeholder="Enter Name"
@@ -30,12 +31,14 @@
             <label>
               <img src="../assets/emailIcon.svg" class="imgIcon" />
               <input
-                type="email"
+              id="email"
+                type="text"
                 name="email"
                 placeholder="Enter Email"
-                required
+               required
               />
             </label>
+            <span id="errorMsg"></span>
 
             <label>
               <input
@@ -49,18 +52,20 @@
                 <img src="../assets/eye.svg" class="eyeImg" id="eyeImg" />
               </button>
             </label>
+            <span id="passwordErrMsg"></span>
             <!-- <label>
             
             <input type="checkbox"/>
           </label> -->
 
             <div class="btn">
-              <button class="signUpBtn">signup</button>
-              <button class="signInBtn">signin</button>
+              <button type="submit" class="signUpBtn">signup</button>
+              <button class="signInBtn"><a href="./login.html">Login</a></button>
             </div>
           </form>
         </main>
       </div>
     </div>
+    <script type="module" src="../Js/Signup.js" ></script>
   </body>
 </html>

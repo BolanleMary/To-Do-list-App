@@ -36,9 +36,10 @@
 
 h2 {
   text-align: center;
-  padding-top: 30px;
+    padding-top: 30px;
   margin-bottom: 35px;
   color: blueviolet;
+ 
 }
 
 form {
@@ -80,6 +81,10 @@ input {
   top: 9px;
  
 }
+span{
+  color: red;
+  padding-left: 35px;
+}
 
 .btn {
   display: flex;
@@ -100,3 +105,9 @@ button {
   background-color: blueviolet;
   color: white;
 }
+.login{
+  margin-top: 20px;
+  border-radius: 0px;
+  width: 300px;
+}
+
