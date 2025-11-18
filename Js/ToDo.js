@@ -11,6 +11,7 @@ form.addEventListener('submit', (e)=>{
 const description = document.getElementById('description').value;
 const dueDate = document.getElementById('dueDate').value;
 const taskTodo = document.createElement('li');
+
 taskTodo.classList.add('task')
 taskTodo.innerHTML =`
 <h3>${title}</h3>
@@ -21,4 +22,24 @@ taskTodo.innerHTML =`
 `
 list.appendChild(taskTodo);
 
+//Delete Item
+const deleteBtn = document.querySelector('.deleteBtn')
+deleteBtn.addEventListener("click", () =>{
+    list.removeChild(taskTodo)
+})
+
+//Reset form
+//form.reset();
+
+
+})
+
+//toggle mode effect
+const modeBtn = document.get
+const mode = document.getElementsByClassName('mode')
+modeBtn.addEventListener('click', (e) =>{
+    e.preventDefault()
+    document.body.style.backgroundColor ="black"
+
+    
 })

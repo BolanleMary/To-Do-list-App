@@ -7,7 +7,8 @@
   <link  rel="stylesheet" href="../CSS/ToDo.css"/>
 </head>
 <body>
-  <div class="container">
+  <button id="modeBtn"><img src="../assets/darkMode.svg" class="mode"/></button>
+    <div class="container">
     <h1>To-Do List</h1>
     <form id="todoForm">
       <input type="text" id="title" placeholder="Task Title" required />
@@ -20,5 +21,37 @@
   </div>
   <script src="../Js/ToDo.js"></script>
 
+  <!-- <script>
+    const form = document.getElementById('todoForm');
+    const taskList = document.getElementById('taskList');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const title = document.getElementById('title').value;
+      const description = document.getElementById('description').value;
+      const dueDate = document.getElementById('dueDate').value;
+
+      const taskItem = document.createElement('li');
+      taskItem.classList.add('task');
+      taskItem.innerHTML = `
+        <button class="delete-btn">X</button>
+        <h3>${title}</h3>
+        <p>${description || "No description"}</p>
+        <small>Due: ${new Date(dueDate).toLocaleString()}</small>
+      `;
+
+      // Delete task
+      taskItem.querySelector('.delete-btn').addEventListener('click', () => {
+        taskList.removeChild(taskItem);
+      });
+
+      // Add task to list
+      taskList.appendChild(taskItem);
+
+      // Reset form
+      //form.reset();
+    });
+  </script> -->
 </body>
 </html>
