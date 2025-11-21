@@ -35,11 +35,12 @@ deleteBtn.addEventListener("click", () =>{
 })
 
 //toggle mode effect
-const modeBtn = document.get
-const mode = document.getElementsByClassName('mode')
+const modeBtn = document.getElementById('modeBtn')
+const mode = document.querySelector('.mode')
 modeBtn.addEventListener('click', (e) =>{
     e.preventDefault()
-    document.body.style.backgroundColor ="black"
-
+     colorChange =  document.body.style.backgroundColor 
+mode.src = mode.src === '../assets/darkMode.svg'? "../assets/lightMode.svg": "../assets/darkMode.svg";
+colorChange = mode.src === '../assets/darkMode.svg'?  "black": "white"
     
 })
