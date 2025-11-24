@@ -90,7 +90,10 @@
     .task small {
       color: #888;
     }
-
+.taskWrapper{
+  display: flex;
+  /* flex-direction: row; */
+}
     .deleteBtn {
       background: #dc3545;
       color: white;
@@ -104,3 +107,14 @@
     .delete-btn:hover {
       background: #a71d2a;
     }
+
+    /* complete/ overdue indicator */
+    .task.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.task.overdue {
+  border-left: 5px solid #ff4d4d;
+  background: #fff4f4;
+}
