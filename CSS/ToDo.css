@@ -1,4 +1,4 @@
-/* ---------- Basic reset & fonts ---------- */
+/*  Basic reset & fonts  */
     :root{
       --bg:#0f1724;
       --card:#0b1220;
@@ -19,7 +19,7 @@
       -webkit-font-smoothing:antialiased;
     }
 
-    /* ---------- App frame ---------- */
+    /*  App frame  */
     .app{
       max-width:1100px;
       margin:0 auto;
@@ -29,7 +29,7 @@
       align-items:start;
     }
 
-    /* ---------- Left panel (form) ---------- */
+    /*  Left panel (form)  */
     .panel{
       background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       border-radius:14px;
@@ -59,9 +59,8 @@
       padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600;
       box-shadow: 0 6px 16px rgba(3,7,18,0.6);
     }
-   /* ----------------------------------------------------
-   THEME VARIABLES (Dark = default)
----------------------------------------------------- */
+   /* 
+   THEME VARIABLES (Dark = default) */
 :root {
   /* Dark Mode Colors */
   --bg: #0f1724;
@@ -79,9 +78,7 @@
   --success: #16a34a;
 }
 
-/* ----------------------------------------------------
-   LIGHT MODE VARIABLES (Overrides)
----------------------------------------------------- */
+/*  LIGHT MODE VARIABLES (Overrides) */
 body.light-mode {
   --bg: #ffffff;
   --bg2: #f7f7f7;
@@ -98,9 +95,7 @@ body.light-mode {
   --success: #16a34a;
 }
 
-/* ----------------------------------------------------
-   BASE STYLES
----------------------------------------------------- */
+/* BASE STYLES */
 * {
   box-sizing: border-box;
 }
@@ -115,9 +110,7 @@ html, body {
   padding: 24px;
 }
 
-/* ----------------------------------------------------
-   GRID LAYOUT
----------------------------------------------------- */
+/*  GRID LAYOUT */
 .app {
   max-width: 1100px;
   margin: 0 auto;
@@ -133,9 +126,7 @@ html, body {
   }
 }
 
-/* ----------------------------------------------------
-   LEFT PANEL (Form)
----------------------------------------------------- */
+/*  LEFT PANEL (Form) */
 .panel {
   background: var(--card);
   padding: 20px;
@@ -154,9 +145,7 @@ h1 {
   font-size: 14px;
 }
 
-/* ----------------------------------------------------
-   FORM FIELDS
----------------------------------------------------- */
+/*  FORM FIELDS */
 label {
   display: block;
   margin-top: 14px;
@@ -182,9 +171,7 @@ textarea {
   resize: vertical;
 }
 
-/* ----------------------------------------------------
-   BUTTONS
----------------------------------------------------- */
+/* BUTTONS */
 .btn {
   padding: 10px 14px;
   border-radius: 10px;
@@ -218,9 +205,7 @@ textarea {
   margin-top: 16px;
 }
 
-/* ----------------------------------------------------
-   TOP TOOLBAR
----------------------------------------------------- */
+/* TOP TOOLBAR*/
 .toolbar {
   display: flex;
   justify-content: space-between;
@@ -237,13 +222,13 @@ textarea {
   color: var(--text);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 360px) {
   .search { width: 100%; }
 }
 
-/* ----------------------------------------------------
-   TASK LIST CARDS
----------------------------------------------------- */
+
+   /* TASK LIST CARDS */
+
 .list {
   display: grid;
   gap: 12px;
@@ -277,7 +262,8 @@ textarea {
 
 /* Overdue & Completed */
 .overdue {
-  border-left: 4px solid var(--danger);
+   color: var(--danger);
+  
 }
 
 .completed h3,
@@ -303,9 +289,7 @@ textarea {
   color: var(--danger);
 }
 
-/* ----------------------------------------------------
-   EMPTY STATE
----------------------------------------------------- */
+/* EMPTY STATE*/
 .empty {
   padding: 24px;
   text-align: center;
@@ -314,25 +298,27 @@ textarea {
   border-radius: 10px;
 }
 
-/* ----------------------------------------------------
-   TOASTS
----------------------------------------------------- */
-.toast-wrap {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+
+/* .filters{
+  visibility: hidden ;
+} */
+
+.taskHeader{
+  border: 2px solid var(--border);
+  padding: 12px ;
+  border-radius: 12px;
+ 
 }
 
-.toast {
-  padding: 12px 16px;
-  background: var(--bg2);
-  color: var(--text);
-  border-radius: 10px;
-  border: 1px solid var(--border);
+.taskButtons{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+ float: right;
+ margin-top: 14px;
+ 
 }
-.filters{
-  visibility: hidden ;
+.taskButtons button{
+  background: none;
+  border: none;
 }
