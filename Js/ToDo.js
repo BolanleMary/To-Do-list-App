@@ -150,7 +150,7 @@ function loadTodos() {
     .then(todos => {
         list.innerHTML = "";
 
-        todos.forEach(todo => {
+        todos.reverse().forEach(todo => {
             const due = new Date(todo.due_date);
             const now = new Date();
 

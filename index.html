@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do List</title>
+    <link rel="stylesheet" href="../CSS/Signup.css" />
+    
+  </head>
+  <body>
+    <div class="container">
+      <div class="innerBox">
+        <div class="intro">
+          <h1>Welcome to your To-do list App</h1>
+          <p>Sign up to get started</p>
+        </div>
+        <main class="wrapper">
+          <h2 class="underline">Sign up</h2>
+          <form id="form">
+            <label>
+              <img src="../assets/userIcon.svg" class="imgIcon" />
+              <input
+              id="name"
+                type="text"
+                name="name"
+                placeholder="Enter Name"
+                required
+              />
+            </label>
+
+            <label>
+              <img src="../assets/emailIcon.svg" class="imgIcon" />
+              <input
+              id="email"
+                type="text"
+                name="email"
+                placeholder="Enter Email"
+               required
+              />
+            </label>
+            <span id="errorMsg"></span>
+
+            <label>
+              <input
+                id="password"
+                type="password"
+                name="password"
+                placeholder="Enter password"
+                required
+              />
+              <button type="button" class="eyeImg" id="buttonEye">
+                <img src="../assets/eye.svg" class="eyeImg" id="eyeImg" />
+              </button>
+            </label>
+            <span id="passwordErrMsg"></span>
+            <!-- <label>
+            
+            <input type="checkbox"/>
+          </label> -->
+
+            <div class="btn">
+              <button type="submit" class="signUpBtn">signup</button>
+              <button class="signInBtn"><a href="./login.html">Login</a></button>
+            </div>
+          </form>
+        </main>
+      </div>
+    </div>
+    <script type="module" src="../Js/Signup.js" ></script>
+  </body>
+</html>
