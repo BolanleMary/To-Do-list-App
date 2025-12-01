@@ -1,57 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do List App</title>
-  <link  rel="stylesheet" href="../CSS/ToDo.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> To-Do App</title>
+   <link rel="stylesheet" href="../CSS/ToDo.css" />
 </head>
 <body>
-  <button id="modeBtn" ><img src="../assets/darkMode.svg" class="mode"/></button>
-    <div class="container">
-    <h1>To-Do List</h1>
-    <form id="todoForm">
-      <input type="text" id="title" placeholder="Task Title" required />
-      <textarea id="description" placeholder="Task Description"></textarea>
-      <input type="datetime-local" id="dueDate" required />
-      <button type="submit" tooltip="click me" id="toAddBtn" >Add Task</button>
-    </form>
+  <div class="app">
+    <!-- LEFT: form -->
+    <div class="panel">
+      <button id="modeToggle"></button>
+      <h1>My ToDo App</h1>
+      <p class="lead">Create tasks, set due dates, and stay on top. Edit or delete anytime.</p>
 
-    <ul id="taskList"></ul>
+      <form id="todoForm" autocomplete="off">
+        <label for="title">Title</label>
+        <input id="title" type="text" placeholder="What needs to be done?" required />
+
+        <label for="description">Description</label>
+        <textarea id="description" placeholder="Add details (optional)"></textarea>
+
+        <label for="dueDate">Due date & time</label>
+        <input id="dueDate" type="datetime-local" required />
+
+        <div class="actions">
+          <button type="submit" id="toAddBtn" class="btn primary">Add Task</button>
+          <button type="button" id="cancelEdit" class="btn cancel" style="display:none">Cancel</button>
+          <div style="flex:1"></div>
+          <button type="button" id="clearAll" class="btn ghost">Clear All</button>
+        </div>
+      </form>
+
+      <p class="muted" style="margin-top:14px">Tip: You can edit your task by clicking on the task. "Update Task" will save changes.</p>
+    </div>
+
+    <!-- RIGHT: list -->
+    <div>
+      <div class="toolbar">
+        <div>
+          <h2 style="margin:0">Tasks</h2>
+          
+        </div>
+
+        <div class="filters">
+          <input id="search" class="search" placeholder="Search title or description..." />
+        </div>
+      </div>
+
+      <div id="list" class="list"></div>
+      <div id="empty" class="empty" style="display:none">No tasks yet — add your first one on the left ✨</div>
+    </div>
   </div>
-  <script src="../Js/ToDo.js"></script>
 
-  <!-- <script>
-    const form = document.getElementById('todoForm');
-    const taskList = document.getElementById('taskList');
+  <!-- Task area -->
+  <div class="toast-wrap" id="toasts"></div>
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+<script  src="../Js/ToDo.js">
 
-      const title = document.getElementById('title').value;
-      const description = document.getElementById('description').value;
-      const dueDate = document.getElementById('dueDate').value;
-
-      const taskItem = document.createElement('li');
-      taskItem.classList.add('task');
-      taskItem.innerHTML = `
-        <button class="delete-btn">X</button>
-        <h3>${title}</h3>
-        <p>${description || "No description"}</p>
-        <small>Due: ${new Date(dueDate).toLocaleString()}</small>
-      `;
-
-      // Delete task
-      taskItem.querySelector('.delete-btn').addEventListener('click', () => {
-        taskList.removeChild(taskItem);
-      });
-
-      // Add task to list
-      taskList.appendChild(taskItem);
-
-      // Reset form
-      //form.reset();
-    });
-  </script> -->
+</script>
 </body>
 </html>

@@ -1,120 +1,338 @@
- body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-top: 50px;
+/* ---------- Basic reset & fonts ---------- */
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#7c3aed;
+      --accent-2:#06b6d4;
+      --glass: rgba(255,255,255,0.03);
+      --success: #16a34a;
+      --danger: #ef4444;
+      --soft:#e6eef8;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+    body{
+      background: linear-gradient(180deg,#071024 0%, #081131 60%);
+      color:var(--soft);
+      padding:28px;
+      -webkit-font-smoothing:antialiased;
     }
 
-    .container {
-      background: #fff;
-      padding: 20px 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 400px;
+    /* ---------- App frame ---------- */
+    .app{
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 420px 1fr;
+      gap:28px;
+      align-items:start;
     }
-   #modeBtn{
-    background-color: transparent;
-  padding: 0;
-   }
-.mode{
-  padding-left: 410px;
-  
+
+    /* ---------- Left panel (form) ---------- */
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      padding:20px;
+      box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    h1{margin:0 0 10px 0;font-size:20px;letter-spacing:-0.2px}
+    p.lead{color:var(--muted);margin-top:8px;font-size:13px}
+
+    label{display:block;margin-top:14px;font-size:13px;color:var(--muted)}
+    input[type="text"], textarea, input[type="datetime-local"]{
+      width:100%;
+      padding:10px 12px;
+      margin-top:8px;
+      border-radius:10px;
+      background:var(--glass);
+      border:1px solid rgba(255,255,255,0.03);
+      color:var(--soft);
+      outline:none;
+    }
+    textarea{min-height:92px;resize:vertical}
+    .row{display:flex;gap:10px;align-items:center}
+    .actions{display:flex;gap:8px;margin-top:14px;align-items:center}
+
+    button.btn{
+      padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600;
+      box-shadow: 0 6px 16px rgba(3,7,18,0.6);
+    }
+   /* ----------------------------------------------------
+   THEME VARIABLES (Dark = default)
+---------------------------------------------------- */
+:root {
+  /* Dark Mode Colors */
+  --bg: #0f1724;
+  --bg2: #0b1220;
+  --text: #e6eef8;
+  --text-muted: #94a3b8;
+  --card: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.05);
+  --input: rgba(255,255,255,0.05);
+
+  --accent: #7c3aed; 
+  --accent2: #06b6d4;
+
+  --danger: #ef4444;
+  --success: #16a34a;
 }
-    h1 {
-      text-align: center;
-      color: #333;
-    }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
+/* ----------------------------------------------------
+   LIGHT MODE VARIABLES (Overrides)
+---------------------------------------------------- */
+body.light-mode {
+  --bg: #ffffff;
+  --bg2: #f7f7f7;
+  --text: #111111;
+  --text-muted: #555;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --input: #f3f4f6;
 
-    input, textarea {
-      padding: 8px 10px;
-      font-size: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      outline: none;
-    }
+  --accent: #7c3aed;
+  --accent2: #06b6d4;
 
-    textarea {
-      resize: none;
-      height: 60px;
-    }
+  --danger: #dc2626;
+  --success: #16a34a;
+}
 
-    button {
-      background: #007bff;
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+/* ----------------------------------------------------
+   BASE STYLES
+---------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
 
-    button:hover {
-      background: #0056b3;
-    
-    }
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+  padding: 24px;
+}
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
+/* ----------------------------------------------------
+   GRID LAYOUT
+---------------------------------------------------- */
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 24px;
+}
 
-    .task {
-      background: #fafafa;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
+/* Responsive: Stack columns */
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+}
 
-    .task h3 {
-      margin: 0;
-      color: #222;
-    }
+/* ----------------------------------------------------
+   LEFT PANEL (Form)
+---------------------------------------------------- */
+.panel {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
 
-    .task p {
-      margin: 5px 0;
-      color: #555;
-    }
+h1 {
+  margin: 0 0 8px 0;
+}
 
-    .task small {
-      color: #888;
-    }
-.taskWrapper{
+.lead {
+  margin: 6px 0 0 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ----------------------------------------------------
+   FORM FIELDS
+---------------------------------------------------- */
+label {
+  display: block;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+input[type="text"],
+input[type="datetime-local"],
+textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--input);
+  border: 1px solid var(--border);
+  color: var(--text);
+  outline: none;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* ----------------------------------------------------
+   BUTTONS
+---------------------------------------------------- */
+.btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  color: white;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn.cancel {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.actions {
   display: flex;
-  /* flex-direction: row; */
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
 }
-    .deleteBtn {
-      background: #dc3545;
-      color: white;
-      border: none;
-      padding: 6px 10px;
-      border-radius: 5px;
-      float: right;
-      cursor: pointer;
-    }
 
-    .delete-btn:hover {
-      background: #a71d2a;
-    }
+/* ----------------------------------------------------
+   TOP TOOLBAR
+---------------------------------------------------- */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
 
-    /* complete/ overdue indicator */
-    .task.completed {
-  opacity: 0.6;
+.search {
+  padding: 10px;
+  width: 260px;
+  background: var(--input);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .search { width: 100%; }
+}
+
+/* ----------------------------------------------------
+   TASK LIST CARDS
+---------------------------------------------------- */
+.list {
+  display: grid;
+  gap: 12px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 14px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card h3 {
+  margin: 0;
+}
+
+.desc {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.due {
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* Overdue & Completed */
+.overdue {
+  border-left: 4px solid var(--danger);
+}
+
+.completed h3,
+.completed .desc,
+.completed .due {
+  opacity: 0.5;
   text-decoration: line-through;
 }
 
-.task.overdue {
-  border-left: 5px solid #ff4d4d;
-  background: #fff4f4;
+/* Card actions */
+.smallBtn {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* Delete */
+.smallBtn.del {
+  color: var(--danger);
+}
+
+/* ----------------------------------------------------
+   EMPTY STATE
+---------------------------------------------------- */
+.empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+}
+
+/* ----------------------------------------------------
+   TOASTS
+---------------------------------------------------- */
+.toast-wrap {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  padding: 12px 16px;
+  background: var(--bg2);
+  color: var(--text);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.filters{
+  visibility: hidden ;
 }
