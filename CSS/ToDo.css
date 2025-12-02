@@ -119,7 +119,7 @@ html, body {
   gap: 24px;
 }
 
-/* Responsive: Stack columns */
+/* for Responsiveness */
 @media (max-width: 900px) {
   .app {
     grid-template-columns: 1fr;
@@ -319,6 +319,7 @@ textarea {
  
 }
 .taskButtons button{
-  background: none;
-  border: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
 }

@@ -143,7 +143,7 @@ function allTodos() {
 
             card.innerHTML = `
                 <div class="taskHeader">
-                <div class="taskButtons">
+                <div class="taskButtons ">
                         <button onclick="toggleComplete(${todo.id}, ${todo.completed})">
                             ${todo.completed ? "Undo" : "Done"}
                         </button>
