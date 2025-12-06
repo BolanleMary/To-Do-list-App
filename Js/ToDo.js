@@ -148,6 +148,7 @@ function allTodos() {
                             ${todo.completed ? "Undo" : "Done"}
                         </button>
                         <button onclick="editTodo(${todo.id})">Edit</button>
+
                         <button onclick="deleteTodo(${todo.id})"><img src ="../assets/deleteIcon.svg"/></button>
                     </div>
                     <h3>${todo.title}</h3>
